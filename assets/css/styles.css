@@ -1,3 +1,11 @@
 body{
-  background: blue;
+  /*background: blue;*/
+}
+
+.row{
+  display: inline-block;
+}
+
+.tile {
+  border: 1px solid red;
 }
