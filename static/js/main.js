@@ -66,12 +66,14 @@ module.exports = React.createClass({displayName: "exports",
     console.log('items render',this.state.items);
     var items = this.state.items.map(function(item, idx){
       return (
-        React.createElement("div", {className: "row tile", key: idx}, 
+        React.createElement("div", {className: "row", key: idx}, 
+         React.createElement("div", {className: "col-sm-4 block"}, 
           React.createElement("div", {className: "product-img"}, 
             React.createElement("div", null, item.name), 
             React.createElement("div", null, item.description), 
             React.createElement("div", null, item.price)
           )
+         )
         )
       );
     });
@@ -80,7 +82,7 @@ module.exports = React.createClass({displayName: "exports",
     return (
       React.createElement("div", null, 
         React.createElement("button", {onClick: this.getItems}, "Load items"), 
-        React.createElement("div", {className: "tile"}, items)
+        React.createElement("div", {className: "container"}, items)
       )
     )
   }

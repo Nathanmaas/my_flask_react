@@ -31,12 +31,14 @@ module.exports = React.createClass({
     console.log('items render',this.state.items);
     var items = this.state.items.map(function(item, idx){
       return (
-        <div className="row tile" key={idx}>
+        <div className="row" key={idx}>
+         <div className="col-sm-4 block">
           <div className="product-img">
             <div>{item.name}</div>
             <div>{item.description}</div>
             <div>{item.price}</div>
           </div>
+         </div>
         </div>
       );
     });
@@ -45,7 +47,7 @@ module.exports = React.createClass({
     return (
       <div>
         <button onClick={this.getItems}>Load items</button>
-        <div className="tile">{items}</div>
+        <div className="container">{items}</div>
       </div>
     )
   }
